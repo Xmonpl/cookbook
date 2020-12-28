@@ -1,8 +1,8 @@
 <body>
-    <!-- NavBar -->
+    <!-- NavBar <span id="userCount">ladowanie…</span>-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="index.php">Xmon.cf - CookBook 🥘</a>
+          <a class="navbar-brand" id="online" href="index.php" data-bs-toggle="tooltip" data-bs-original-title="Użytkowników online: ładowanie..." title="Użytkowników online: ładowanie...">Xmon.cf - CookBook 🥘</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>

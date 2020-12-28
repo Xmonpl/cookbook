@@ -6,6 +6,30 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
   return new bootstrap.Tooltip(tooltipTriggerEl)
 })
 </script>
+<script type="text/javascript" charset="utf-8">
+$().ready(function (){
+  var token = '';
+  var pinger = setInterval(function (){
+    
+    $.ajax({
+      cache: false,
+      data: {
+        token: token,
+      },
+      timeout: 2500,
+      type: 'GET',
+      url: 'class/pinger.php',
+      dataType: 'json',
+      success: function (data, status, jqXHR){
+        $('#online').attr("title", "Użytkowników online: " + data.userCount + " 🟢");
+        $('#online').attr("data-bs-original-title", "Użytkowników online: " + data.userCount + " 🟢");
+        token = data.token;
+      }
+    });
+    
+  }, 2500);
+});
+</script>
 <?php
   echo("<script>console.log('email => ".@$_SESSION['email']."')</script>");
   echo("<script>console.log('nickname => ".@$_SESSION['nickname']."')</script>");
